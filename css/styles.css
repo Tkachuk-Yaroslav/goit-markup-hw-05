@@ -26,6 +26,7 @@
     --team-soc-bg: #4D5AE5;
     --team-soc-bg-hover: #404BBF;
     --strategy-icon-bg: #F4F4FD;
+    --bg-active-page: #404BBF;
 }
 /*КОЛЬОРОВІ ЗМІННІ
 --main-btn-bg: #4D5AE5; головна заливка кнопки
@@ -719,4 +720,22 @@ padding-top: 96px;
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--secondary-portfolio-color, #434455);
+}
+
+
+
+.active-page {
+    position: relative;
+}
+
+.active-page::after {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 100%;
+    height: 4px;
+    /* top: 68px; */
+    bottom: 0;
+    background-color: var(--bg-active-page, #404BBF);
+    border-radius: 2px;
 }
