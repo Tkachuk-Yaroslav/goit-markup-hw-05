@@ -719,7 +719,8 @@ padding-top: 96px;
     overflow: auto;
 }
 
-.result-link:hover .result-fly-text {
+.result-link:hover .result-fly-text,
+.result-link:focus .result-fly-text {
     transform: translateY(0);
 }
 
