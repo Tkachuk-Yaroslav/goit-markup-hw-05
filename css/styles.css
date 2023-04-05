@@ -28,6 +28,8 @@
     --strategy-icon-bg: #F4F4FD;
     --bg-active-page: #404BBF;
     --result-fly-text-color: #F4F4FD;
+    --modal-bg: #FCFCFC;
+    --modal-btn-bg: #E7E9FC;
 }
 /*КОЛЬОРОВІ ЗМІННІ
 --main-btn-bg: #4D5AE5; головна заливка кнопки
@@ -594,6 +596,60 @@ body {
     letter-spacing: 0.02em;
     color: var(--footer-text-color, #F4F4FD);
     max-width: 264px;
+}
+
+/**-------------------------------MODAL----------------------------*/
+.backdrop {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(46, 47, 66, 0.4);
+    transition: opasity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal {
+    position: absolute;
+    width: 408px;
+    min-height: 576px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0) scale(1);
+    background-color: var(--modal-bg, #FCFCFC);
+    border-radius: 4px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 
+    0px 1px 3px rgba(0, 0, 0, 0.12), 
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 24px;
+}
+
+.modal-close-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    margin-left: auto;
+    background-color: var(--modal-btn-bg, #E7E9FC);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+
+    cursor: pointer;
+}
+
+.modal-close {
+}
+
+.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) rotate(1turn) scale(0.1);
 }
 
 /**-------------------------------portfolio----------------------------*/
